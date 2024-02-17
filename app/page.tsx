@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Button from '@mui/material/Button';
+import Link from "next/link";
 
 const socket = new WebSocket("ws://localhost:8080/ws")
 
@@ -18,8 +20,13 @@ socket.addEventListener("close", event => {
 
 export default function Home() {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <body>
+      <div className="text-center">
+        <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>
+      </div>
+      <Button variant="contained" href="/get-started" color="primary">
+        Sign up with email
+      </Button>
+    </body>
   );
 }
